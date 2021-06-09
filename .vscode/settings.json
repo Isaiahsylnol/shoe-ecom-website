@@ -1,0 +1,4 @@
+{
+    "github.allowUnsafeSSL": true,
+    "github.gitCommand": "/usr/local/bin/git"
+}
