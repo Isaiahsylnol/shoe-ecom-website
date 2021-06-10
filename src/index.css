@@ -7,6 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button{
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.card{
+  margin: 0.5em;
+  border: none;
+}
+
 .logo-div{
   margin-bottom: 3em;
 }

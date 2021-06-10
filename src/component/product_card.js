@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 
 class ProductCard extends Component {
   render() {
-    return <div class="card">
-    <div class="card-body">
-        <div class="title">
-            <div class="card-title">
+    
+    return <div className="card border-0">
+    <div className="card-body">
+        <div className="title">
+            <div className="mb-2">
+            <button>
+              <img width="270" src={this.props.image}/>
+            </button>
+            </div>
+            <div className="card-title text-left">
                 <h5>{this.props.title}</h5>
             </div>
-            <div>
-              <img width="270" src={this.props.image}/>
-            </div>
-            <p class="card-text">
-                This is the text for the given card
+            <p className="text-left">
+                Men's Shoe
             </p>
-            <div class="pricing">
-                <h1>${this.props.price}</h1>
-                <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a>
+            <div className="text-left pricing">
+                <h6>${this.props.price}</h6>
+                {/* <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a> */}
             </div>
         </div>
     </div>
@@ -24,4 +27,4 @@ class ProductCard extends Component {
   }
 }
 
-export default ProductCard; 
+export default ProductCard;
