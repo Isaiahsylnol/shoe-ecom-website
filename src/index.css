@@ -30,3 +30,39 @@ code {
 .navbar {
   float: right;
 }
+
+.title{
+  float: left;
+  position: absolute;
+  top: 125px;
+  left: 15px;
+  font-size: 11rem;
+  text-transform: uppercase;
+  user-select: none;
+  line-height: .9;
+  color: rgb(0, 0, 0);
+}
+
+.sec-2{
+  float: right;
+}
+
+.para{
+  float: left;
+  position: absolute;
+  top: 295px;
+  left: 15px;
+  max-width: 600px;
+  text-align: left;
+  font-size: 22px;
+  text-transform: uppercase;
+  user-select: none;
+  line-height: .9;
+  color: rgb(0, 0, 0);
+}
+
+.footer{
+  margin-top: 3em;
+  background-color: rgb(219, 219, 219);
+  height: 13em;
+}

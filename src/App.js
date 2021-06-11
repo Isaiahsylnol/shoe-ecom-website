@@ -37,26 +37,35 @@ function App() {
             </div>
         </nav>
         </div>
-
         <div className="container text-center">
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div className="logo-div row">
                 <img width="95" src="../assets/nike-logo.png" alt="Nike logo"/>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', flexFlow: 'row', alignContent: 'center', textAlign: 'center' }}>
+            
+            {/* Carousel            */}
             <Carousel plugins={[
               'infinite',
               {
                 resolve: autoplayPlugin,
                 options: {
-                  interval: 4400,
+                  // 4400
+                  interval: 3400,
                 }
               },
             ]}
             animationSpeed={1000}>
-              <img width="845" className="img-fluid" src="../assets/nocta-2.jpeg" />
-              <img width="845" className="img-fluid" src="../assets/nocta-3.jpeg" />
-              <img width="845" className="img-fluid" src="../assets/nocta-2.jpeg" />
+              <div>
+              <div className="card-background">
+                <img width="985" className="img-fluid" src="../assets/nocta-7.png" />
+              </div>
+              
+              </div>   
+              <img width="985" className="img-fluid" src="../assets/nocta-3.jpeg" />
+              <img width="985" className="img-fluid" src="../assets/nocta-1.jpeg" />
+              <img width="985" className="img-fluid" src="../assets/nocta-4.png" />
+              <img width="985" className="img-fluid" src="../assets/nocta-2.jpeg" />
             </Carousel>
             </div>
           </div>
@@ -65,17 +74,17 @@ function App() {
         <main>
           <section className="container">
           <div className="row mt-5">
-                <Col xl={4} lg={5} md={2} sm={2} xs={2}>
-                    <div >
-                        <img width="500" src="../assets/air-max-270.jpeg" alt="jordan shoes"/>
+                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                  <div className="card-background">
+                    <div className="sec-2">
+                      <Row><h1 className="title">Nike</h1>
+                        <p className="para">Esse occaecat eiusmod aliqua veniam. Irure aute qui ad ex. Ut veniam proident culpa consequat et enim incididunt eiusmod do incididunt elit sint ex. Ut veniam nisi in ullamco esse nisi ea irure ex eiusmod exercitation tempor. Ea enim eu ipsum ipsum consectetur fugiat excepteur veniam in consectetur quis ad labore. Nulla do amet ipsum voluptate Lorem dolore ea laborum quis magna ullamco laborum elit. Cillum id excepteur aliqua tempor sint exercitation enim do reprehenderit labore nisi pariatur.</p></Row>
+
+                        <img width="500" className="wall img-fluid" src="../assets/air-max-270.jpeg" alt="jordan shoes"/>
                     </div>
+                  </div>
                 </Col>
-                <div className="col-md-6">
-                    <div className="panel text left">
-                        <h1>Nike's Latest</h1>
-                        <p>you have to also be exporting the images from somewhere in order to be able to import them anywhere and not just from within the same directory, Which is what would be the case if they were not being exported. They would have to reside in the same directory as the component they were being imported into. You will notice that with any new React app created with CRA for example, the logo.svg file resides in the same directory as App.js, where it is imported. I wrote a piece on importing images in React here:</p>
-                    </div>
-                </div>
+            
                 <div className="col-md-6">
 
                 </div>
@@ -119,7 +128,90 @@ function App() {
         </section>
         </main>
         <footer>
+          <Row className="footer">
+            <div class="container p-4">
+            <div class="row">
+              {/* Grid Column */}
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Social</h5>
+            <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark">Link 1</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 2</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 3</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 4</a>
+          </li>
+        </ul>
+            </div>
+            {/* Grid column */}
 
+            {/* Grid column */}
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Contact</h5>
+            <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark">Link 1</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 2</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 3</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 4</a>
+          </li>
+        </ul>
+            </div>
+            {/* Grid column */}
+
+            {/* Grid column */}
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">FAQs</h5>
+            <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark">Link 1</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 2</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 3</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 4</a>
+          </li>
+        </ul>
+            </div>
+            {/* Grid column */}
+
+            {/* Grid column */}
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled mb-0">
+          <li>
+            <a href="#!" class="text-dark">Link 1</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 2</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 3</a>
+          </li>
+          <li>
+            <a href="#!" class="text-dark">Link 4</a>
+          </li>
+        </ul>
+            </div>
+            </div>
+            </div>
+          </Row>
         </footer>
       </div>
     </div>
