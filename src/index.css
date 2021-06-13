@@ -29,9 +29,15 @@ code {
 
 .navbar {
   float: right;
+  font-size: 1.5em;
 }
 
-.title{
+.bi-bag {
+  margin-left: 4em;
+  margin-right: 3em;
+}
+
+.title-h{
   float: left;
   position: absolute;
   top: 125px;
@@ -41,6 +47,20 @@ code {
   user-select: none;
   line-height: .9;
   color: rgb(0, 0, 0);
+}
+
+.button-h{
+  float: left;
+  position: absolute;
+  top: 125px;
+  left: 15px;
+  font-size: 4rem;
+  background-color: #111111;
+  padding: 0.2em 0.4em 0.2em 0.4em;
+  text-transform: uppercase;
+  user-select: none;
+  line-height: .9;
+  color: rgb(255, 255, 255);
 }
 
 .sec-2{
@@ -64,5 +84,8 @@ code {
 .footer{
   margin-top: 3em;
   background-color: rgb(219, 219, 219);
-  height: 13em;
+}
+
+.copyright {
+  height: 20px;
 }

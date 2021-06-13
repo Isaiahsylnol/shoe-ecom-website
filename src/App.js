@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductCard from './component/product_card.js';
+import ProductCard2 from './component/product_card2.js';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -34,11 +35,16 @@ function App() {
                   <a className="nav-link disabled" href="#">About</a>
                 </li>
               </ul>
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                </svg>
+              </button>
             </div>
         </nav>
         </div>
         <div className="container text-center">
-          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <Col xl={12} lg={12} md={12} sm={12} xs={12}>
             <div className="logo-div row">
                 <img width="95" src="../assets/nike-logo.png" alt="Nike logo"/>
             </div>
@@ -58,6 +64,7 @@ function App() {
             animationSpeed={1000}>
               <div>
               <div className="card-background">
+                <button className="button-h">View</button>
                 <img width="985" className="img-fluid" src="../assets/nocta-7.png" />
               </div>
               
@@ -68,7 +75,7 @@ function App() {
               <img width="985" className="img-fluid" src="../assets/nocta-2.jpeg" />
             </Carousel>
             </div>
-          </div>
+          </Col>
         </div>
         </header>
         <main>
@@ -77,7 +84,7 @@ function App() {
                 <Col xl={12} lg={12} md={12} sm={12} xs={12}>
                   <div className="card-background">
                     <div className="sec-2">
-                      <Row><h1 className="title">Nike</h1>
+                      <Row><h1 className="title-h">Nike</h1>
                         <p className="para">Esse occaecat eiusmod aliqua veniam. Irure aute qui ad ex. Ut veniam proident culpa consequat et enim incididunt eiusmod do incididunt elit sint ex. Ut veniam nisi in ullamco esse nisi ea irure ex eiusmod exercitation tempor. Ea enim eu ipsum ipsum consectetur fugiat excepteur veniam in consectetur quis ad labore. Nulla do amet ipsum voluptate Lorem dolore ea laborum quis magna ullamco laborum elit. Cillum id excepteur aliqua tempor sint exercitation enim do reprehenderit labore nisi pariatur.</p></Row>
 
                         <img width="500" className="wall img-fluid" src="../assets/air-max-270.jpeg" alt="jordan shoes"/>
@@ -90,6 +97,14 @@ function App() {
                 </div>
             </div>
           </section>
+          {/* <section>
+            <div className="cards">
+              <div className="d-flex flex-row justify-content-center flex-wrap">
+                <ProductCard2 title="Nike" image="../assets/pegasus.jpeg" price="263.99" col="dot blue"/>
+                <ProductCard2 title="Nike" image="../assets/pegasus.jpeg" price="263.99" col="dot blue"/>
+              </div>
+            </div>
+          </section> */}
           <section className="section-2 container-fluid p-0">
             <div className="cover">
                 <div className="content text-center ">
@@ -211,6 +226,14 @@ function App() {
             </div>
             </div>
             </div>
+          </Row>
+          <Row className="copyright justify-content-center text-center">
+            {/* Copyright */}
+            <div className="p-4">
+              © 2021 Copyright:
+              <a className="text-reset fw-bold" href="#"> Isaiah Sylvester</a>
+            </div>
+            {/* Copyright */}
           </Row>
         </footer>
       </div>
