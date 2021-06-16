@@ -97,14 +97,14 @@ function App() {
                 </div>
             </div>
           </section>
-          {/* <section>
+          <section>
             <div className="cards">
               <div className="d-flex flex-row justify-content-center flex-wrap">
-                <ProductCard2 title="Nike" image="../assets/pegasus.jpeg" price="263.99" col="dot blue"/>
-                <ProductCard2 title="Nike" image="../assets/pegasus.jpeg" price="263.99" col="dot blue"/>
+                <ProductCard2 title="Running Shoes" image="../assets/nike-run.png" price="263.99" col="dot blue"/>
+                <ProductCard2 title="Causal Shoes" image="../assets/nike-life.png" price="263.99" col="dot blue"/>
               </div>
             </div>
-          </section> */}
+          </section>
           <section className="section-2 container-fluid p-0">
             <div className="cover">
                 <div className="content text-center ">

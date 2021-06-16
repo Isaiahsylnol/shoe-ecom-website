@@ -4,7 +4,7 @@ class ProductCard extends Component {
   render() {
     
     return <div className="card border-0">
-    <div className="card-body">
+    <div className="card-body glow-on-hover">
         <div className="title">
             <div className="mb-2">
             <button>
