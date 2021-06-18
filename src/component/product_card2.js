@@ -8,7 +8,7 @@ class ProductCard2 extends Component {
         <div className="title">
             <div className="mb-2">
             <button>
-              <img height="570" src={this.props.image}/>
+              <img height="570" src={this.props.image} alt="display"/>
             </button>
             </div>
             <div className="card-title text-left">

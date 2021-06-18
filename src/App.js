@@ -10,6 +10,26 @@ import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
 function App() {
+
+  /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
   return (
     <div className="App">
       <div>
@@ -35,11 +55,17 @@ function App() {
                   <a className="nav-link disabled" href="#">About</a>
                 </li>
               </ul>
-              <button>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+            </div>
+    {/* Dropdown cart menu */}
+            <div className="dropdown">
+              <button onClick={myFunction} className="dropbtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-bag dropbtn" viewBox="0 0 16 16">
                   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
                 </svg>
               </button>
+              <div id="myDropdown" className="dropdown-content">
+              <p>Cart</p>
+              </div>
             </div>
         </nav>
         </div>
@@ -144,83 +170,83 @@ function App() {
         </main>
         <footer>
           <Row className="footer">
-            <div class="container p-4">
-            <div class="row">
+            <div className="container p-4">
+            <div className="row">
               {/* Grid Column */}
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Social</h5>
-            <ul class="list-unstyled mb-0">
+            <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase">Social</h5>
+            <ul className="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-dark">Link 1</a>
+            <a href="#!" className="text-dark">Link 1</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 2</a>
+            <a href="#!" className="text-dark">Link 2</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 3</a>
+            <a href="#!" className="text-dark">Link 3</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 4</a>
-          </li>
-        </ul>
-            </div>
-            {/* Grid column */}
-
-            {/* Grid column */}
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Contact</h5>
-            <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#!" class="text-dark">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 4</a>
+            <a href="#!" className="text-dark">Link 4</a>
           </li>
         </ul>
             </div>
             {/* Grid column */}
 
             {/* Grid column */}
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">FAQs</h5>
-            <ul class="list-unstyled mb-0">
+            <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase">Contact</h5>
+            <ul className="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-dark">Link 1</a>
+            <a href="#!" className="text-dark">Link 1</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 2</a>
+            <a href="#!" className="text-dark">Link 2</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 3</a>
+            <a href="#!" className="text-dark">Link 3</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 4</a>
+            <a href="#!" className="text-dark">Link 4</a>
           </li>
         </ul>
             </div>
             {/* Grid column */}
 
             {/* Grid column */}
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-            <ul class="list-unstyled mb-0">
+            <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase">FAQs</h5>
+            <ul className="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-dark">Link 1</a>
+            <a href="#!" className="text-dark">Link 1</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 2</a>
+            <a href="#!" className="text-dark">Link 2</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 3</a>
+            <a href="#!" className="text-dark">Link 3</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Link 4</a>
+            <a href="#!" className="text-dark">Link 4</a>
+          </li>
+        </ul>
+            </div>
+            {/* Grid column */}
+
+            {/* Grid column */}
+            <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase">Links</h5>
+            <ul className="list-unstyled mb-0">
+          <li>
+            <a href="#!" className="text-dark">Link 1</a>
+          </li>
+          <li>
+            <a href="#!" className="text-dark">Link 2</a>
+          </li>
+          <li>
+            <a href="#!" className="text-dark">Link 3</a>
+          </li>
+          <li>
+            <a href="#!" className="text-dark">Link 4</a>
           </li>
         </ul>
             </div>
