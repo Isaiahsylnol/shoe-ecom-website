@@ -14,9 +14,9 @@ var db = require('knex')({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    user : 'admin',
-    password : 'toronto',
-    database : 'nike_ecom_clone_db'
+    user : '',
+    password : '',
+    database : ''
   }
 });
 
