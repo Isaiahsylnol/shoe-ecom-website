@@ -13,11 +13,6 @@ button{
   background: none;
 }
 
-.card{
-  margin: 0.5em;
-  border: none;
-}
-
 .card-2{
   margin: 70px;
   border: none;
@@ -122,7 +117,6 @@ code {
   float: right;
   font-size: 1.5em;
 }
- 
 
 .title-h{
   float: left;
@@ -176,3 +170,14 @@ code {
 .copyright {
   height: 20px;
 }
+
+.prodCard {
+  display: flex;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+  }
+
+  .card-body {
+    margin: 1em;
+  }
+ 
