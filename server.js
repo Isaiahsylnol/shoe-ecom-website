@@ -14,9 +14,9 @@ var db = require('knex')({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    user : ' ',
-    password : ' ',
-    database : ' '
+    user : 'admin',
+    password : 'toronto',
+    database : 'nike_ecom_clone_db'
   }
 });
 
@@ -27,7 +27,7 @@ const main = require('./src/controllers/main')
 const app = express()
 
 // App Middleware
-const whitelist = ['http://localhost:3002']
+const whitelist = ['http://localhost:3001']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
