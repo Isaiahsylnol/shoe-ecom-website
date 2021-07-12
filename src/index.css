@@ -9,13 +9,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button{
+button {
   padding: 0;
   border: none;
   background: none;
 }
 
-.card-2{
+.card-2 {
   margin: 70px;
   border: none;
 }
@@ -64,17 +64,9 @@ button{
   top: 0;
   border-radius: 10px;
 }
-
-.dropbtn {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  margin-left: 73px;
-  border: none;
-  cursor: pointer;
-}
-
+ 
 .dropdown {
+  margin-top: 18px;
   position: relative;
   display: inline-block;
 }
@@ -83,6 +75,8 @@ button{
   display: none;
   position: absolute;
   background-color: #f1f1f1;
+  float: left;
+  margin-left: -12em;
   min-width: 160px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -111,7 +105,7 @@ code {
     monospace;
 }
 
-.title-h{
+.title-h {
   float: left;
   position: absolute;
   top: 125px;
@@ -123,7 +117,7 @@ code {
   color: rgb(0, 0, 0);
 }
 
-.button-h{
+.button-h {
   float: left;
   position: absolute;
   top: 125px;
@@ -137,11 +131,11 @@ code {
   color: rgb(255, 255, 255);
 }
 
-.sec-2{
+.sec-2 { 
   float: right;
 }
 
-.para{
+.para {
   float: left;
   position: absolute;
   top: 295px;
@@ -155,7 +149,7 @@ code {
   color: rgb(0, 0, 0);
 }
 
-.footer{
+.footer {
   margin-top: 3em;
   background-color: rgb(219, 219, 219);
 }
@@ -188,7 +182,7 @@ code {
 NAVIGATION
 ***********************************/
 
-.brand-title{
+.brand-title {
   color: white;
   font-family: 'lato';
   text-align: left;
@@ -211,7 +205,7 @@ NAVIGATION
 }
 
 .header {
-  overflow: hidden;
+ 
   color: black;
   padding: 15px 10px;
 }
@@ -225,4 +219,14 @@ NAVIGATION
   font-size: 18px; 
   line-height: 25px;
   border-radius: 4px;
+}
+
+/**********************************
+CART 
+***********************************/
+#cart-view {
+  height: 15em;
+  width: 14em;
+  float: left;
+ background-color: aquamarine;
 }

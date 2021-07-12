@@ -1,29 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cart from "./Cart";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Header from "../src/component/Header";
+import CartDetails from "./pages/CartDetails";
 
 function App() {
-  function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function (event) {
-    if (!event.target.matches(".dropbtn")) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains("show")) {
-          openDropdown.classList.remove("show");
-        }
-      }
-    }
-  };
-
   return (
     <Router>
       <div className="App">
@@ -34,7 +16,7 @@ function App() {
                     <Home />
                   </Route>
                   <Route exact path="/cart">
-                    <Cart />
+                    <CartDetails />
                   </Route>
                 </Switch>
               </div>

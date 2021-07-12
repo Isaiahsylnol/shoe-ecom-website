@@ -9,6 +9,15 @@ const Home = () => {
             <div>
             <div className="container text-center">
               <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexFlow: "row",
+                    alignContent: "center",
+                    textAlign: "center",
+                  }}
+                ></div>
                   <Carousel>
                     <Carousel.Item interval={500}>
                       <img
