@@ -1,7 +1,17 @@
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+
 const Cart = () => {
+
+    function testClick() {
+        console.log("the button works");
+    };
+    
     return(
         <div id="cart-view">
-            <h2>Hello from cart, shop more</h2>
+            <Link to="/cart">
+                <Button variant="primary">Primary</Button>{' '}
+            </Link>
         </div>
     )
 }

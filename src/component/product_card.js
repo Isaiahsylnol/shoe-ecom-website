@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class ProductCard extends Component {
   state = {
     products: [],
+    item: "hee",
+    home: "changed text"
   };
 
   componentDidMount() {
@@ -13,11 +16,18 @@ class ProductCard extends Component {
     });
   }
 
+  onChange(id) {
+    this.props.item(this.state.home);
+    console.log(this.state.item);
+    //console.log(this.state.item);
+  }
+
   render() {
     return (
+      <Link to="/detail" onClick={this.onChange.bind(this)}>
       <div className="prodCard justify-content-center">
         {this.state.products.map((product) => (
-          <div key={product.id} >
+          <div key={product.id} prodData={this.state.item}>
             <div className="card-body glow-on-hover">
               <div className="title">
                 <div className="mb-2">
@@ -42,6 +52,7 @@ class ProductCard extends Component {
           </div>
         ))}
       </div>
+      </Link>
     );
   }
 }

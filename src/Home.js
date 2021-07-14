@@ -2,9 +2,27 @@ import { Row, Col } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import ProductCard2 from "./component/product_card2.js";
 import ProductCard from "./component/product_card.js";
+import useState from "react";
+import React, { Component } from 'react';
+class Home extends Component {
 
-const Home = () => {
-    return(
+  constructor(){
+    super();
+    this.state = {
+      home: "home test"
+    };
+  }
+
+  onAlgoChange(item) {
+    this.setState(
+      {
+        home: item
+      }
+    );
+  }
+  
+    render() {
+      return(
         <div className="container-fluid p-0">
             <div>
             <div className="container text-center">
@@ -156,7 +174,7 @@ const Home = () => {
               <div className="purchase text-center">
                 <h1>Purchase</h1>
                 <div className="d-flex flex-row flex-wrap">
-                  <ProductCard />
+                  <ProductCard item={this.onAlgoChange.bind(this)} />
                 </div>
               </div>
             </section>
@@ -293,6 +311,7 @@ const Home = () => {
         </div>
       </div>
     )
+    }
 }
 
 export default Home;

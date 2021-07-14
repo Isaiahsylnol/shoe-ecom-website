@@ -1,25 +1,25 @@
 import React from "react";
 import Cart from "./Cart";
+import { Link } from "react-router-dom";
 
 function Header() {
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
 
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-    
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches(".dropbtn")) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
         }
-      };
+      }
+    }
+  };
 
   return (
     <div className="header">
@@ -27,7 +27,7 @@ function Header() {
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container-fluid">
             <div className="navbar-header">
-              <a href="#">
+              <Link to="/">
                 <div>
                   <img
                     width="95"
@@ -35,29 +35,20 @@ function Header() {
                     alt="Nike logo"
                   />
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="header-right">
               <a href="#">
-                {" "}
-                <p id="navText">
-                  Home
-                </p>
+                <p id="navText">Home</p>
               </a>
               <a href="#">
-                <p id="navText">
-                  Gallery
-                </p>
+                <p id="navText">Gallery</p>
               </a>
               <a href="#">
-                <p id="navText">
-                  Shop
-                </p>
+                <p id="navText">Shop</p>
               </a>
               <a href="#">
-                <p id="navText">
-                  Contact
-                </p>
+                <p id="navText">Contact</p>
               </a>
               {/* Dropdown cart menu */}
               <div className="dropdown">
@@ -74,7 +65,7 @@ function Header() {
                   </svg>
                 </button>
                 <div id="myDropdown" className="dropdown-content">
-                 <Cart /> 
+                  <Cart />
                 </div>
               </div>
             </div>
