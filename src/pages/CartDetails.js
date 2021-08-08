@@ -4,7 +4,7 @@ function CartDetails() {
 
   return (
     <div>
-      <h1>Car details</h1>
+      <h1>Cart details</h1>
     </div>
   );
 }

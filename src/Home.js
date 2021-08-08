@@ -2,6 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import ProductCard2 from "./component/product_card2.js";
 import ProductCard from "./component/product_card.js";
+import { Link } from "react-router-dom";
 import useState from "react";
 import React, { Component } from 'react';
 class Home extends Component {
@@ -11,6 +12,15 @@ class Home extends Component {
     this.state = {
       home: "home test"
     };
+  }
+
+  componentDidMount() {
+    if (!this.props.product){
+      console.log("empty set");
+    } else {
+      console.log("state found");
+    }
+
   }
 
   onAlgoChange(item) {
@@ -174,7 +184,37 @@ class Home extends Component {
               <div className="purchase text-center">
                 <h1>Purchase</h1>
                 <div className="d-flex flex-row flex-wrap">
-                  <ProductCard item={this.onAlgoChange.bind(this)} />
+    
+               {this.props.product.map( product => <div className="prodCard justify-content-center">
+               <Link to="/detail"> 
+          <div key={this.props.product.id}>
+            {/* <ProductDetails item={product.name} /> */}
+            <div className="card-body glow-on-hover">
+              <div className="title">
+                <div className="mb-2">
+                  <button>
+                    <img
+                      width="270"
+                      src="../assets/pegasus.jpeg"
+                      alt="product card"
+                    />
+                  </button>
+                </div>
+                <div className="card-title text-left">
+                  <h5>{product.name}</h5>
+                </div>
+                <p className="text-left">Men's Shoe</p>
+                <div className="text-left pricing">
+                  <h6>{product.price}</h6>
+                  {/* <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a> */}
+                </div>
+              </div>
+            </div>
+          </div>
+          </Link>
+      </div>)}
+ 
+         
                 </div>
               </div>
             </section>

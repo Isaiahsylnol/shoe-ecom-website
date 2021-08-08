@@ -10,7 +10,7 @@ const Cart = () => {
     return(
         <div id="cart-view">
             <Link to="/cart">
-                <Button variant="primary">Primary</Button>{' '}
+                <Button variant="primary">Checkout</Button>{' '}
             </Link>
         </div>
     )
