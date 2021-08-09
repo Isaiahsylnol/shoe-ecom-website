@@ -9,19 +9,20 @@ const bodyParser = require('body-parser') // turns response into usable format
 const cors = require('cors')  // allows/disallows cross-site communication
 const morgan = require('morgan') // logs requests
 
+// Controllers - aka, the db queries
+const main = require('./src/controllers/main')
+const { config } = require('dotenv')
+
 // db Connection w/ localhost
 var db = require('knex')({
   client: 'pg',
   connection: {
     host : '127.0.0.1',
-    user : '',
-    password : '',
-    database : ''
+    user : process.env.REACT_APP_PG_USER,
+    password : process.env.REACT_APP_PG_PASS,
+    database : process.env.REACT_APP_DB_NAME
   }
 });
-
-// Controllers - aka, the db queries
-const main = require('./src/controllers/main')
 
 // App
 const app = express()

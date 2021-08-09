@@ -38,18 +38,18 @@ function Header() {
               </Link>
             </div>
             <div className="header-right">
-              <a href="#">
+              <Link to="/">
                 <p id="navText">Home</p>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/">
                 <p id="navText">Gallery</p>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/">
                 <p id="navText">Shop</p>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/">
                 <p id="navText">Contact</p>
-              </a>
+              </Link>
               {/* Dropdown cart menu */}
               <div className="dropdown">
                 <button onClick={myFunction}>

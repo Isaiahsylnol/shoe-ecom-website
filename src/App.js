@@ -49,7 +49,7 @@ class App extends Component {
                   <Route
                     exact
                     key={`route${i}`}
-                    path={`/product/${product.id}`}
+                    path={`/detail/${product.id}`}
                     render={props => (
                       <ProductCard
                         product={product}

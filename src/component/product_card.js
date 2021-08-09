@@ -24,7 +24,7 @@ class ProductCard extends Component {
  }
   render() {
     return (
-      <Link to="/detail"> 
+ 
       <div className="prodCard justify-content-center">
      
           <div key={this.props.product.id}>
@@ -52,7 +52,7 @@ class ProductCard extends Component {
             </div>
           </div>
       </div>
-      </Link>
+ 
     );
   }
 }

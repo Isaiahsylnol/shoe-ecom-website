@@ -1,112 +1,103 @@
 import { Row, Col } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import ProductCard2 from "./component/product_card2.js";
-import ProductCard from "./component/product_card.js";
 import { Link } from "react-router-dom";
-import useState from "react";
-import React, { Component } from 'react';
+import React, { Component } from "react";
 class Home extends Component {
-
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      home: "home test"
+      home: "home test",
     };
   }
 
   componentDidMount() {
-    if (!this.props.product){
+    if (!this.props.product) {
       console.log("empty set");
     } else {
       console.log("state found");
     }
-
   }
 
   onAlgoChange(item) {
-    this.setState(
-      {
-        home: item
-      }
-    );
+    this.setState({
+      home: item,
+    });
   }
-  
-    render() {
-      return(
-        <div className="container-fluid p-0">
-            <div>
-            <div className="container text-center">
-              <Col xl={12} lg={12} md={12} sm={12} xs={12}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexFlow: "row",
-                    alignContent: "center",
-                    textAlign: "center",
-                  }}
-                ></div>
-                  <Carousel>
-                    <Carousel.Item interval={500}>
-                      <img
-                        className="d-block w-100"
-                        src="../assets/nocta-3.jpeg"
-                        alt="Second slide"
-                      />
-                      <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </p>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item interval={500}>
-                      <img
-                        className="d-block w-100"
-                        src="../assets/nocta-1.jpeg"
-                        alt="Second slide"
-                      />
-                      <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </p>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                      <img
-                        className="d-block w-100"
-                        src="../assets/nocta-4.png"
-                        alt="Third slide"
-                      />
-                      <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                          Praesent commodo cursus magna, vel scelerisque nisl
-                          consectetur.
-                        </p>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                      <img
-                        className="d-block w-100"
-                        src="../assets/nocta-7.png"
-                        alt="fourth slide"
-                      />
-                      <Carousel.Caption>
-                        <h3>fourth slide label</h3>
-                        <p>
-                          Praesent commodo cursus magna, vel scelerisque nisl
-                          consectetur.
-                        </p>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                  </Carousel>
-               
-              </Col>
-            </div>
+
+  render() {
+    return (
+      <div className="container-fluid p-0">
+        <div>
+          <div className="container text-center">
+            <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexFlow: "row",
+                  alignContent: "center",
+                  textAlign: "center",
+                }}
+              ></div>
+              <Carousel>
+                <Carousel.Item interval={500}>
+                  <img
+                    className="d-block w-100"
+                    src="../assets/nocta-3.jpeg"
+                    alt="Second slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={500}>
+                  <img
+                    className="d-block w-100"
+                    src="../assets/nocta-1.jpeg"
+                    alt="Second slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="../assets/nocta-4.png"
+                    alt="Third slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                      Praesent commodo cursus magna, vel scelerisque nisl
+                      consectetur.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="../assets/nocta-7.png"
+                    alt="fourth slide"
+                  />
+                  <Carousel.Caption>
+                    <h3>fourth slide label</h3>
+                    <p>
+                      Praesent commodo cursus magna, vel scelerisque nisl
+                      consectetur.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </Col>
+          </div>
           <main>
             <section className="container">
               <div className="row mt-5">
@@ -184,37 +175,39 @@ class Home extends Component {
               <div className="purchase text-center">
                 <h1>Purchase</h1>
                 <div className="d-flex flex-row flex-wrap">
-    
-               {this.props.product.map( product => <div className="prodCard justify-content-center">
-               <Link to="/detail"> 
-          <div key={this.props.product.id}>
-            {/* <ProductDetails item={product.name} /> */}
-            <div className="card-body glow-on-hover">
-              <div className="title">
-                <div className="mb-2">
-                  <button>
-                    <img
-                      width="270"
-                      src="../assets/pegasus.jpeg"
-                      alt="product card"
-                    />
-                  </button>
-                </div>
-                <div className="card-title text-left">
-                  <h5>{product.name}</h5>
-                </div>
-                <p className="text-left">Men's Shoe</p>
-                <div className="text-left pricing">
-                  <h6>{product.price}</h6>
-                  {/* <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a> */}
-                </div>
-              </div>
-            </div>
-          </div>
-          </Link>
-      </div>)}
- 
-         
+                  {this.props.product.map((product) => (
+                    <div
+                      key={product.id}
+                      id={product.id}
+                      className="prodCard justify-content-center"
+                    >
+                      <Link to={`/detail/${product.id}`}>
+                        <div>
+                          <div className="card-body glow-on-hover">
+                            <div className="title">
+                              <div className="mb-2">
+                                <button>
+                                  <img
+                                    width="270"
+                                    src="../assets/pegasus.jpeg"
+                                    alt="product card"
+                                  />
+                                </button>
+                              </div>
+                              <div className="card-title text-left">
+                                <h5>{product.name}</h5>
+                              </div>
+                              <p className="text-left">Men's Shoe</p>
+                              <div className="text-left pricing">
+                                <h6>{product.price}</h6>
+                                {/* <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a> */}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
@@ -350,8 +343,8 @@ class Home extends Component {
           </footer>
         </div>
       </div>
-    )
-    }
+    );
+  }
 }
 
 export default Home;
