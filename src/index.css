@@ -221,6 +221,13 @@ NAVIGATION
   border-radius: 4px;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px;
+  grid-gap: 2px;
+  /* background-color: aquamarine; */
+}
+
 /**********************************
 CART 
 ***********************************/
