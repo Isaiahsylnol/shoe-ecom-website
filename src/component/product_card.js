@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-
-import { Link } from "react-router-dom";
-import ProductDetails from '../pages/productDetails';
-
 class ProductCard extends Component {
   constructor(props) {
     super()
@@ -27,7 +23,7 @@ class ProductCard extends Component {
  
       <div className="prodCard justify-content-center">
      
-          <div key={this.props.product.id}>
+          <div >
             {/* <ProductDetails item={product.name} /> */}
             <div className="card-body glow-on-hover">
               <div className="title">

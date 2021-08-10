@@ -7,8 +7,7 @@ import Home from "./Home";
 import Header from "../src/component/Header";
 import CartDetails from "./pages/CartDetails";
 import ProductDetails from "./pages/productDetails";
-import ProductCard from "../src/component/product_card";
-
+import ProductDetailCard from "../src/component/product_detail";
 class App extends Component {
   
     state = {
@@ -51,7 +50,7 @@ class App extends Component {
                     key={`route${i}`}
                     path={`/detail/${product.id}`}
                     render={props => (
-                      <ProductCard
+                      <ProductDetailCard
                         product={product}
                         />
                     )}
