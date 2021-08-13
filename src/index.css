@@ -237,3 +237,37 @@ CART
   float: left;
  background-color: aquamarine;
 }
+
+.button1 {
+  background-color: white; 
+  margin: 1em;
+  width: 50px;
+  padding: 13px;
+  color: black;   
+  /* border: 2px solid #4CAF50; */
+}
+
+.button1:hover {
+  border: 2px solid;
+  /* background-color: #4CAF50; */
+}
+
+.color-select{
+  padding: 12px;
+  max-width: 30px;
+  max-height: 30px;
+  border: 1px solid;
+}
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px;
+  grid-gap: 15px;
+  /* background-color: aquamarine; */
+}
+
+#horizontal_prod_card {
+  height: 15em;
+ background-color: aquamarine;
+
+}

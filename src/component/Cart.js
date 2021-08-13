@@ -1,12 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
-const Cart = () => {
-
-    function testClick() {
-        console.log("the button works");
-    };
-    
+const Cart = () => {    
     return(
         <div id="cart-view">
             <Link to="/cart">
@@ -17,3 +12,4 @@ const Cart = () => {
 }
 
 export default Cart;
+

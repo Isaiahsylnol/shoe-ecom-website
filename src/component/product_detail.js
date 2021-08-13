@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import HorizontalProdCard from "./horizontal_prod_card";
 
 class ProductDetail extends Component {
   componentDidMount() {
@@ -17,26 +17,23 @@ class ProductDetail extends Component {
       console.log("color: " + cor);
     });
   }
-  render() {
-    const mystyle = {
-      color: "white",
-      backgroundColor: "DodgerBlue",
-      width: 55,
-      padding: "10px",
-      fontFamily: "Arial",
-    };
 
+  handleClick() {
+    console.log("Button pressed here");
+  }
+
+  render() {
+    
     return (
       <div
         key={this.props.product.id}
-        className="prodCard justify-content-center"
-      >
+        className="prodCard justify-content-center">
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Paper>xs=12</Paper>
+            <div>xs=12</div>
           </Grid>
           <Grid item xs={6}>
-            <Paper>
+            <div>
               <div>
                 {/* <ProductDetails item={product.name} /> */}
                 <div className="card-body glow-on-hover">
@@ -61,35 +58,35 @@ class ProductDetail extends Component {
                   </div>
                 </div>
               </div>
-            </Paper>
+            </div>
           </Grid>
-          <Grid item xs={6}>
-            <Paper>
+          <Grid item xs={3}>
               <div className="grid-container">
                 {this.props.product.color.map((color) => (
-                  <div className="grid-child"
+                  <div className="color-select"
                     style={{
                       backgroundColor: color,
-                      padding: 12,
-                      maxWidth: 30,
-                      maxHeight: 30,
+               
                     }}
                   ></div>
                 ))}
               </div>
-            </Paper>
+              <Grid item xs={3}> 
+            <div className="grid-container-2">
+                {this.props.product.size.map((size) => (
+                  <button className="button1" onClick={this.handleClick}>
+                  <div className="grid-child"
+                    style={{        
+                     
+                    }}
+                  >{size}</div>
+                  </button>
+                ))}
+              </div>
           </Grid>
-          <Grid item xs={3}>
-            <Paper>xs=3</Paper>
           </Grid>
-          <Grid item xs={3}>
-            <Paper>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper>xs=3</Paper>
+          <Grid item lg={12} md={10} sm={12} xs={12}>
+            <div><HorizontalProdCard/></div>
           </Grid>
         </Grid>
       </div>
