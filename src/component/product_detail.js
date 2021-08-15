@@ -18,8 +18,8 @@ class ProductDetail extends Component {
     });
   }
 
-  handleClick() {
-    console.log("Button pressed here");
+  handleClick(event, someParameter) {
+    console.log(someParameter);
   }
 
   render() {
@@ -32,7 +32,7 @@ class ProductDetail extends Component {
           <Grid item xs={12}>
             <div>xs=12</div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item lg={6} md={6} sm={6} xs={12}>
             <div>
               <div>
                 {/* <ProductDetails item={product.name} /> */}
@@ -60,35 +60,34 @@ class ProductDetail extends Component {
               </div>
             </div>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item lg={4} md={5} sm={6} xs={12}>
               <div className="grid-container">
                 {this.props.product.color.map((color) => (
-                  <div className="color-select"
+                  <button   className="color-select"
                     style={{
                       backgroundColor: color,
-               
                     }}
-                  ></div>
+                    onClick={(e) => {
+                      this.handleClick(e, color);
+                    }}
+                  ></button>
                 ))}
               </div>
-              <Grid item xs={3}> 
-            <div className="grid-container-2">
+              <div className="grid-container-2">
                 {this.props.product.size.map((size) => (
-                  <button className="button1" onClick={this.handleClick}>
-                  <div className="grid-child"
-                    style={{        
-                     
-                    }}
-                  >{size}</div>
+                  <button className="button1" onClick={(e) => {
+                    this.handleClick(e, size);
+                  }}>
+                  {size} 
                   </button>
                 ))}
-              </div>
+              </div></Grid>
+             
           </Grid>
-          </Grid>
-          <Grid item lg={12} md={10} sm={12} xs={12}>
+          <Grid item lg={12} md={12} sm={12} xs={12}>
             <div><HorizontalProdCard/></div>
           </Grid>
-        </Grid>
+    
       </div>
     );
   }

@@ -222,9 +222,10 @@ NAVIGATION
 }
 
 .grid-container {
-  display: grid;
+  display:flex;
   grid-template-columns: 40px 40px 40px 40px;
   grid-gap: 2px;
+  padding-bottom: 1em;
   /* background-color: aquamarine; */
 }
 
@@ -241,14 +242,19 @@ CART
 .button1 {
   background-color: white; 
   margin: 1em;
-  width: 50px;
-  padding: 13px;
-  color: black;   
+  width: 43px;
+  height: 43px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  border: 2px solid;
+  border-radius: 7px;
+  border-color: rgb(206, 206, 206); 
   /* border: 2px solid #4CAF50; */
 }
 
 .button1:hover {
   border: 2px solid;
+  /* border-radius: 50%; */
   /* background-color: #4CAF50; */
 }
 
@@ -261,8 +267,11 @@ CART
 
 .grid-container-2 {
   display: grid;
+  margin-top: 2em;
   grid-template-columns: 40px 40px 40px 40px;
   grid-gap: 15px;
+  border: 1px solid;
+  border-radius: 7px;
   /* background-color: aquamarine; */
 }
 
