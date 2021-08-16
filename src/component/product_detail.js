@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import HorizontalProdCard from "./horizontal_prod_card";
+import Button from '@material-ui/core/Button';
 
 class ProductDetail extends Component {
+  constructor(props) {
+        super(props);
+        //this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            selectedButton: null
+        }
+    }
   componentDidMount() {
     if (!this.props.product) {
       console.log("empty set");
@@ -19,6 +27,7 @@ class ProductDetail extends Component {
   }
 
   handleClick(event, someParameter) {
+    this.setState({activeButton: "active button"})
     console.log(someParameter);
   }
 
@@ -60,8 +69,8 @@ class ProductDetail extends Component {
               </div>
             </div>
           </Grid>
-          <Grid item lg={4} md={5} sm={6} xs={12}>
-              <div className="grid-container">
+          <Grid className="grid-container" item lg={4} md={5} sm={6} xs={12}>
+          <div >
                 {this.props.product.color.map((color) => (
                   <button   className="color-select"
                     style={{
@@ -73,21 +82,25 @@ class ProductDetail extends Component {
                   ></button>
                 ))}
               </div>
-              <div className="grid-container-2">
+              <div >
+                
                 {this.props.product.size.map((size) => (
                   <button className="button1" onClick={(e) => {
                     this.handleClick(e, size);
                   }}>
                   {size} 
                   </button>
-                ))}
-              </div></Grid>
-             
+                ))}  
+              </div> 
+<div>
+<Button variant="contained" color="primary" onClick={() => { alert('clicked')
+ }}>Add to cart</Button>
+</div>      
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
             <div><HorizontalProdCard/></div>
           </Grid>
-    
+    </Grid>
       </div>
     );
   }
