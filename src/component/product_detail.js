@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import HorizontalProdCard from "./horizontal_prod_card";
 import Button from '@material-ui/core/Button';
+import StripeCheckout from "react-stripe-checkout";
 
 class ProductDetail extends Component {
   constructor(props) {
@@ -29,6 +30,10 @@ class ProductDetail extends Component {
   handleClick(event, someParameter) {
     this.setState({activeButton: "active button"})
     console.log(someParameter);
+  }
+
+  handleToken(token, addresses){
+    console.log({token,addresses})
   }
 
   render() {
@@ -82,8 +87,7 @@ class ProductDetail extends Component {
                   ></button>
                 ))}
               </div>
-              <div >
-                
+              <div className="size-btn-container">
                 {this.props.product.size.map((size) => (
                   <button className="button1" onClick={(e) => {
                     this.handleClick(e, size);
@@ -92,9 +96,19 @@ class ProductDetail extends Component {
                   </button>
                 ))}  
               </div> 
+              <p>
+                In et cillum commodo qui consectetur qui minim cillum magna esse tempor. Irure et cillum consectetur aute esse id velit. Nostrud sunt nulla veniam qui consequat magna irure proident officia. Velit commodo proident nulla sunt labore quis sunt Lorem.
+              </p>
 <div>
-<Button variant="contained" color="primary" onClick={() => { alert('clicked')
- }}>Add to cart</Button>
+{/* <Button variant="contained" color="primary" onClick={() => { alert('clicked')
+ }}>Add to cart</Button> */}
+ <StripeCheckout 
+ stripeKey=""
+ token={this.handleToken}
+ billingAddress
+ shippingAddress
+ amount={this.props.product.price * 100}
+ name={this.props.product.name}/>
 </div>      
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
