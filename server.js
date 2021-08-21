@@ -57,7 +57,7 @@ app.post('/checkout', async (req, res) =>{
     const { product, token } = req.body;
 
     const customer = await 
-    stripe.customer.create({
+    stripe.customers.create({
       email: token.email,
       source: token.id
     });
