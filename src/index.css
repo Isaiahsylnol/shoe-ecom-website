@@ -221,14 +221,6 @@ NAVIGATION
   border-radius: 4px;
 }
 
-.grid-container {
-  display:flex;
-  grid-template-columns: 40px 40px 40px 40px;
-  grid-gap: 2px;
-  padding-bottom: 1em;
-  /* background-color: aquamarine; */
-}
-
 /**********************************
 CART 
 ***********************************/
@@ -239,17 +231,24 @@ CART
  background-color: aquamarine;
 }
 
+/**********************************
+Product details component 
+***********************************/
+
 .button1 {
   background-color: white; 
-  margin: 1em;
-  width: 43px;
-  height: 43px;
+  margin: 3px;
+  width: 100px;
   padding: 10px;
   color: rgb(0, 0, 0);
   border: 2px solid;
   border-radius: 7px;
   border-color: rgb(206, 206, 206); 
   /* border: 2px solid #4CAF50; */
+}
+
+.size-btn-container{
+  margin:3em 0em 3em 0em;
 }
 
 .button1:hover {
@@ -260,23 +259,31 @@ CART
 
 .color-select{
   padding: 12px;
+  margin-top: 2em;
   max-width: 30px;
   max-height: 30px;
   border: 1px solid;
 }
 
-.grid-container-2 {
+.grid-container {
   display: grid;
-  margin-top: 2em;
-  grid-template-columns: 40px 40px 40px 40px;
-  grid-gap: 15px;
+  justify-content: center;
+  grid-template-columns:  280px;
   border: 1px solid;
   border-radius: 7px;
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
 }
 
 #horizontal_prod_card {
   height: 15em;
  background-color: aquamarine;
 
+}
+
+.base-class{
+  background-color: blue;
+}
+
+.active-color{
+   background-color: red;
 }

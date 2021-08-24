@@ -11,12 +11,9 @@ import ProductDetailCard from "../src/component/product_detail";
 class App extends Component {
   
     state = {
-      products: [],
-       data: 'some default data',
-       field: ''
+      products: []
     }
  
-
   componentDidMount() {
     axios.get("http://localhost:3000/crud").then((res) => {
       console.log(res);
@@ -30,16 +27,16 @@ class App extends Component {
             <Header />
               <div className="container-fluid p-0">
                   <Switch>
-                  
                     <Route exact path="/"
                     render={props => (
                       <Home product={this.state.products} />
-                    )}>
-                     
+                    )}> 
                     </Route>
-              
                     <Route exact path="/cart">
                       <CartDetails />
+                    </Route>
+                    <Route exact path="/crud">
+                      <h2>Hello there</h2>
                     </Route>
                     <Route exact path="/detail">
                       <ProductDetails />
@@ -56,8 +53,6 @@ class App extends Component {
                     )}
                   />
                 ))}
-
-                    
                   </Switch>
                 </div>
               </div>
