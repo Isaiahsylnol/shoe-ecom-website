@@ -2,7 +2,7 @@ import React from "react";
 import Cart from "./Cart";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -28,6 +28,15 @@ function Header() {
           <div className="container-fluid">
             <div className="navbar-header">
               <Link to="/">
+              {!props.state.user ? (
+                  <Link to="/login" className="navbar-item">
+                    Login
+                  </Link>  
+                ) : (
+                  <Link to="/" onClick={this.logout} className="navbar-item">
+                    Logout
+                  </Link>
+                )}<br/>
                 <div>
                   <img
                     width="95"
@@ -63,6 +72,12 @@ function Header() {
                   >
                     <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                   </svg>
+                  <span
+                    className="tag is-primary"
+                    style={{ marginLeft: "5px" }}
+                  >
+                    { Object.keys(props.state.cart).length }
+                  </span>
                 </button>
                 <div id="myDropdown" className="dropdown-content">
                   <Cart />

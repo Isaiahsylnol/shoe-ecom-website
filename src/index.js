@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import "bulma/css/bulma.css";
+
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 ReactDOM.render(
-  <React.StrictMode>
+    <Elements stripe={stripePromise}>
     <App />
-  </React.StrictMode>,
+    </Elements>,
   document.getElementById('root')
 );
 
@@ -15,3 +21,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+  

@@ -1,46 +1,16 @@
-import { Row, Col } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import ProductCard2 from "./component/product_card2.js";
 import { Link } from "react-router-dom";
-import React, { Component } from "react";
-class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      home: "home test",
-    };
-  }
-
-  componentDidMount() {
-    if (!this.props.product) {
-      console.log("empty set");
-    } else {
-      console.log("state found");
-    }
-  }
-
-  onAlgoChange(item) {
-    this.setState({
-      home: item,
-    });
-  }
-
-  render() {
+import React from "react";
+ 
+const Home = props => {
+  const { products } = props;
     return (
-      <div className="container-fluid p-0">
-        <div>
-          <div className="container text-center">
-            <Col xl={12} lg={12} md={12} sm={12} xs={12}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexFlow: "row",
-                  alignContent: "center",
-                  textAlign: "center",
-                }}
-              ></div>
-              <Carousel>
+      <div>
+      <section className="">
+     
+                <div className="container has-text-centered">
+                <Carousel>
                 <Carousel.Item interval={500}>
                   <img
                     className="d-block w-100"
@@ -96,17 +66,21 @@ class Home extends Component {
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
-            </Col>
-          </div>
-          <main>
-            <section className="container">
-              <div className="row mt-5">
-                <Col xl={12} lg={12} md={12} sm={12} xs={12}>
-                  <div className="card-background">
-                    <div className="sec-2">
-                      <Row>
-                        <h1 className="title-h">Nike</h1>
-                        <p className="para">
+                </div>
+    
+        </section>
+      
+        <section className="container">
+            <div className="columns features"> 
+                <div className="column is-6">
+                    <div className="card is-shady">
+                        <div className="card-image has-text-centered">
+                            <i className="fa fa-apple"></i>
+                        </div>
+                        <div className="card-content">
+                            <div className="content">
+                            <h1 className=" ">Nike</h1>
+                        <p className=" ">
                           Esse occaecat eiusmod aliqua veniam. Irure aute qui ad
                           ex. Ut veniam proident culpa consequat et enim
                           incididunt eiusmod do incididunt elit sint ex. Ut
@@ -118,68 +92,64 @@ class Home extends Component {
                           Cillum id excepteur aliqua tempor sint exercitation
                           enim do reprehenderit labore nisi pariatur.
                         </p>
-                      </Row>
-
-                      <img
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="column is-6">
+                    <div className="card is-shady">
+                        <div className="card-image has-text-centered">
+                            <i className="fa fa-apple"></i>
+                        </div>
+                        <div className="card-content">
+                            <div className="content">
+                            <img
                         width="500"
                         className="wall img-fluid"
                         src="../assets/air-max-270.jpeg"
                         alt="jordan shoes"
                       />
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </Col>
-
-                <div className="col-md-6"></div>
-              </div>
-            </section>
-            <section>
-              <div className="cards">
-                <div className="d-flex flex-row justify-content-center flex-wrap">
-                  <ProductCard2
+                </div>
+            </div>
+            <div className="columns features"> 
+                <div className="column is-6">
+                    <div className="  is-shady">
+                      
+ 
+                        <ProductCard2
                     title="Running Shoes"
                     image="../assets/nike-run.png"
                   />
-                  <ProductCard2
+ 
+                    </div>
+                </div>
+                <div className="column is-6">
+                    <div className="  is-shady">
+                         
+                       
+                            <ProductCard2
                     title="Causal Shoes"
                     image="../assets/nike-life.png"
-                  />
+                  /> 
+     
+                    </div>
                 </div>
-              </div>
-            </section>
-            <section className="section-2 container-fluid p-0">
-              <div className="cover">
-                <div className="content text-center ">
-                  <h1>Something</h1>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Veritatis, vitae fuga! Consectetur, perferendis facilis
-                    officia ex, rem itaque animi odio soluta incidunt accusamus
-                    dignissimos fuga totam! Aspernatur minus molestiae odit?
-                  </p>
-                </div>
-              </div>
-              <div className="container-fluid">
-                <div className="sales d-flex flex-md-row flex-wrap justify-content-center">
-                  <div className="rect">
-                    <h1>Nike Pulse</h1>
-                  </div>
-                  <div className="rect">
-                    <h1>Nike Dunks</h1>
-                  </div>
-                  <div className="rect">
-                    <h1>Nike Leap</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="purchase text-center">
-                <h1>Purchase</h1>
-                <div className="d-flex flex-row flex-wrap">
-                  {this.props.product.map((product) => (
+            </div>
+            <div className="intro column is-8 is-offset-2">
+                <h2 className="title">Perfect for developers or designers!</h2><br />
+                <p className="subtitle">Vel fringilla est ullamcorper eget nulla facilisi. Nulla facilisi nullam vehicula ipsum a. Neque egestas congue quisque egestas diam in arcu cursus.</p>
+            </div>
+            <div className="sandbox">
+            <div className="d-flex flex-row flex-wrap ">
+                  { products.map((product) => (
                     <div
                       key={product.id}
                       id={product.id}
-                      className="prodCard justify-content-center"
+                      
+                      className="prodCard"
                     >
                       <Link to={`/detail/${product.id}`}>
                         <div>
@@ -210,141 +180,10 @@ class Home extends Component {
                   ))}
                 </div>
               </div>
-            </section>
-          </main>
-          <footer>
-            <Row className="footer">
-              <div className="container p-4">
-                <div className="row">
-                  {/* Grid Column */}
-                  <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 className="text-uppercase">Social</h5>
-                    <ul className="list-unstyled mb-0">
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 3
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 4
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* Grid column */}
-
-                  {/* Grid column */}
-                  <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 className="text-uppercase">Contact</h5>
-                    <ul className="list-unstyled mb-0">
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 3
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 4
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* Grid column */}
-
-                  {/* Grid column */}
-                  <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 className="text-uppercase">FAQs</h5>
-                    <ul className="list-unstyled mb-0">
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 3
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 4
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* Grid column */}
-
-                  {/* Grid column */}
-                  <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 className="text-uppercase">Links</h5>
-                    <ul className="list-unstyled mb-0">
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 1
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 3
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" className="text-dark">
-                          Link 4
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </Row>
-            <Row className="copyright justify-content-center text-center">
-              {/* Copyright */}
-              <div className="p-4">
-                © 2021 Copyright:
-                <a className="text-reset fw-bold" href="#!">
-                  {" "}
-                  Isaiah Sylvester
-                </a>
-              </div>
-              {/* Copyright */}
-            </Row>
-          </footer>
+        </section>
         </div>
-      </div>
     );
   }
-}
+ 
 
 export default Home;

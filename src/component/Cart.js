@@ -1,7 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
-const Cart = () => {    
+const Cart = () => {
+    
     return(
         <div id="cart-view">
             <Link to="/cart">
@@ -12,5 +13,4 @@ const Cart = () => {
 }
 
 export default Cart;
-
 
