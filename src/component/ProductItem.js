@@ -9,13 +9,20 @@ const ProductItem = props => {
     });
 
     const handleClick = (event, someParameter) => {
+      if(someParameter >= 1){
+        console.log("this is a number");
+
+      }
+      if(someParameter == typeof(String)){
+        console.log("THis is a color");
+      }
 
         console.log(someParameter);
       };
 
     return(
       <div className="tile is-ancestor">
-      <div className="tile   is-parent">
+      <div className="tile is-parent">
         <div className="tile is-child box">
         <figure>
               <img
@@ -63,7 +70,7 @@ const ProductItem = props => {
             ))}
           </div>
               <button
-                className="button is-small is-outlined is-primary"
+                className="button is-dark is-rounded"
                 onClick={() =>
                   props.addToCart({
                     id: product.name,

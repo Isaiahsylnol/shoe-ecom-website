@@ -8,7 +8,6 @@ const Home = props => {
     return (
       <div>
       <section className="">
-     
                 <div className="container has-text-centered">
                 <Carousel>
                 <Carousel.Item interval={500}>
@@ -116,26 +115,18 @@ const Home = props => {
             </div>
             <div className="columns features"> 
                 <div className="column is-6">
-                    <div className="  is-shady">
-                      
- 
+                    <div>
                         <ProductCard2
                     title="Running Shoes"
                     image="../assets/nike-run.png"
                   />
- 
                     </div>
                 </div>
                 <div className="column is-6">
-                    <div className="  is-shady">
-                         
-                       
                             <ProductCard2
                     title="Causal Shoes"
                     image="../assets/nike-life.png"
-                  /> 
-     
-                    </div>
+                  />     
                 </div>
             </div>
             <div className="intro column is-8 is-offset-2">
@@ -148,7 +139,6 @@ const Home = props => {
                     <div
                       key={product.id}
                       id={product.id}
-                      
                       className="prodCard"
                     >
                       <Link to={`/detail/${product.id}`}>

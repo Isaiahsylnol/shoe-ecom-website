@@ -4,6 +4,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
+import Footer from "./component/Footer";
 import Header from "../src/component/Header";
 import Context from "./context/Context";
 import Login from "./component/Login";
@@ -138,6 +139,7 @@ class App extends Component {
                 ))}
               </Switch>
             </div>
+            <Footer />
           </div>
         </Router>
       </Context.Provider>

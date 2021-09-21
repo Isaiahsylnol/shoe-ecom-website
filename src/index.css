@@ -251,11 +251,13 @@ Product details component
   margin:3em 0em 3em 0em;
 }
 
-.button1:hover {
+.button1:hover, .button::selection{
   border: 2px solid;
+  color: rgb(223, 0, 0); 
   /* border-radius: 50%; */
   /* background-color: #4CAF50; */
 }
+
 
 .color-select{
   padding: 12px;
