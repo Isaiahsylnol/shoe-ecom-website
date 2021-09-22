@@ -3,6 +3,10 @@ import React, { useEffect, useState } from 'react';
 const ProductItem = props => {
  
     const [product] = useState(props.product);
+    const [appState, changeState] = useState({
+      activeObject: null,
+      objects: props.product.size
+    });
 
     useEffect(() => {
        console.log(props); 
@@ -10,15 +14,25 @@ const ProductItem = props => {
 
     const handleClick = (event, someParameter) => {
       if(someParameter >= 1){
-        console.log("this is a number");
-
+        console.log("this is a number")
       }
       if(someParameter == typeof(String)){
         console.log("THis is a color");
       }
-
         console.log(someParameter);
       };
+
+      function toggleActive(index) {
+        changeState({...appState, activeObject: appState.objects[index]});
+      }
+
+      function toggleStyle(index) {
+        if(appState.objects[index] === appState.activeObject){
+          return "button1 active";
+        } else {
+          return " button1 inactive";
+        }
+      }
 
     return(
       <div className="tile is-ancestor">
@@ -58,11 +72,12 @@ const ProductItem = props => {
             ))}
           </div>
           <div className="size-btn-container">
-            {props.product.size.map((size) => (
+            {props.product.size.map((size, index) => (
               <button
-                className="button1"
-                onClick={(e) => {
-                  handleClick(e, size);
+              key={size}
+                className={toggleStyle(index)}
+                onClick={() => {
+                  toggleActive(index);
                 }}
               >
                 {size}

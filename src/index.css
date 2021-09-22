@@ -253,11 +253,20 @@ Product details component
 
 .button1:hover, .button::selection{
   border: 2px solid;
-  color: rgb(223, 0, 0); 
+  color: rgb(0, 0, 0); 
   /* border-radius: 50%; */
   /* background-color: #4CAF50; */
 }
 
+.inactive {
+  background-color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: rgb(0, 0, 0);
+  border: 2px solid;
+  color: rgb(255, 255, 255); 
+}
 
 .color-select{
   padding: 12px;

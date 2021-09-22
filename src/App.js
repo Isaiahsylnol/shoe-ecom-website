@@ -10,6 +10,7 @@ import Context from "./context/Context";
 import Login from "./component/Login";
 import Cart from './component/Cart';
 import ProductDetails from "./pages/productDetails";
+import ScrollToTop from "./utilies/ScrollToTop";
 import ProductDetailCard from "../src/component/product_detail";
 
 class App extends Component {
@@ -93,7 +94,9 @@ class App extends Component {
           checkout: this.checkout
         }}
       >
+        
         <Router>
+        <ScrollToTop>
           <div className="App">
             <Header state={this.state}/>
             <div className="container-fluid p-0">
@@ -112,7 +115,6 @@ class App extends Component {
                   </Link>
                 )}     
               </div>
-            </nav>
               <Switch>
                 <Route exact path="/"
                   render={props => (
@@ -138,9 +140,13 @@ class App extends Component {
                   />
                 ))}
               </Switch>
+            </nav>
+              
+              <Footer />
             </div>
-            <Footer />
+            
           </div>
+          </ScrollToTop>
         </Router>
       </Context.Provider>
     );
