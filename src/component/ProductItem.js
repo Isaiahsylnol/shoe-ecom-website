@@ -4,30 +4,26 @@ const ProductItem = props => {
  
     const [product] = useState(props.product);
     const [appState, changeState] = useState({
-      activeObject: null,
-      objects: props.product.size
+      activeColor: null,
+      activeSize: null,
+      prodSizes: props.product.size,
+      colors: props.product.color
     });
 
     useEffect(() => {
        console.log(props); 
     });
 
-    const handleClick = (event, someParameter) => {
-      if(someParameter >= 1){
-        console.log("this is a number")
+      function toggleActive(obj) {
+        if(obj){
+          //console.log(obj);
+          changeState({...appState, activeSize: obj});
+        }
       }
-      if(someParameter == typeof(String)){
-        console.log("THis is a color");
-      }
-        console.log(someParameter);
-      };
-
-      function toggleActive(index) {
-        changeState({...appState, activeObject: appState.objects[index]});
-      }
-
+      
       function toggleStyle(index) {
-        if(appState.objects[index] === appState.activeObject){
+        if(index === appState.activeSize){
+          console.log(index);
           return "button1 active";
         } else {
           return " button1 inactive";
@@ -59,14 +55,20 @@ const ProductItem = props => {
             )}
             <div className="is-clearfix">
             <div>
-            {props.product.color.map((color) => (
+            {props.product.color.map((color, index) => (
               <button
-                className="color-select"
                 style={{
                   backgroundColor: color,
+                  padding: "15px",
+                  marginTop: "2em",
+                  maxWidth: "30px",
+                  maxHeight: "30px",
+                 
                 }}
-                onClick={(e) => {
-                  handleClick(e, color);
+                key={color}
+                className={toggleStyle(appState.colors[index])}
+                onClick={() => {
+                  toggleActive(appState.colors[index]);
                 }}
               ></button>
             ))}
@@ -75,9 +77,9 @@ const ProductItem = props => {
             {props.product.size.map((size, index) => (
               <button
               key={size}
-                className={toggleStyle(index)}
+                className={toggleStyle(appState.prodSizes[index])}
                 onClick={() => {
-                  toggleActive(index);
+                  toggleActive(appState.prodSizes[index]);
                 }}
               >
                 {size}

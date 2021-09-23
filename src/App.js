@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Footer from "./component/Footer";
 import Header from "../src/component/Header";
@@ -24,6 +24,7 @@ class App extends Component {
     };
     this.routerRef = React.createRef();
   }
+  
   addToCart = cartItem => {
     let cart = this.state.cart;
     if (cart[cartItem.id]) {
@@ -105,16 +106,6 @@ class App extends Component {
             role="navigation"
             aria-label="main navigation"
           >
-              <div className={`navbar-menu ${
-                  this.state.showMenu ? "is-active" : ""
-                }`}>
-              
-                {this.state.user && this.state.user.accessLevel < 1 && (
-                  <Link to="/add-product" className="navbar-item">
-                    Add Product
-                  </Link>
-                )}     
-              </div>
               <Switch>
                 <Route exact path="/"
                   render={props => (

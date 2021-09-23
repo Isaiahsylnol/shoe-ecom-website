@@ -27,7 +27,7 @@ function Header(props) {
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container-fluid">
             <div className="navbar-header">
-              <Link to="/">
+              
               {!props.state.user ? (
                   <Link to="/login" className="navbar-item">
                     Login
@@ -44,7 +44,7 @@ function Header(props) {
                     alt="Nike logo"
                   />
                 </div>
-              </Link>
+          
             </div>
             <div className="header-right">
               <Link to="/">
