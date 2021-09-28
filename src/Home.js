@@ -68,8 +68,7 @@ const Home = props => {
                 </div>
     
         </section>
-      
-        <section className="container">
+     
             <div className="columns features"> 
                 <div className="column is-6">
                     <div className="card is-shady">
@@ -129,17 +128,19 @@ const Home = props => {
                   />     
                 </div>
             </div>
-            <div className="section">
-            <div className="d-flex flex-row flex-wrap">
+
+            {/* Populating of products */}
+            <section className="section">
+            <div className="columns flex-wrap">
                   { products.map((product) => (
                     <div
                       key={product.id}
                       id={product.id}
-                      className="prodCard"
+                      className="column is-four-quarters-mobile is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
                     >
                       <Link to={`/detail/${product.id}`}>
                         <div>
-                          <div className="card-body glow-on-hover">
+                          <div className="card-content glow-on-hover">
                             <div className="title">
                               <div className="mb-2">
                                 <button>
@@ -153,7 +154,7 @@ const Home = props => {
                               <div className="card-title text-left">
                                 <h5>{product.name}</h5>
                               </div>
-                              <p className="text-left">Men's Shoe</p>
+                              <h6 className="text-left">Men's Shoe</h6>
                               <div className="text-left pricing">
                                 <h6>{product.price}</h6>
                                 {/* <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a> */}
@@ -165,8 +166,7 @@ const Home = props => {
                     </div>
                   ))}
                 </div>
-              </div>
-        </section>
+              </section>
         </div>
     );
   }
