@@ -24,19 +24,9 @@ function Header(props) {
   return (
     <div className="header">
       <header>
-        <nav className="navbar navbar-default navbar-fixed-top">
+        <nav className="navbar navbar-fixed-top navbar-end">
           <div className="container-fluid">
-            <div className="navbar-header">
-              
-              {!props.state.user ? (
-                  <Link to="/login" className="navbar-item">
-                    Login
-                  </Link>  
-                ) : (
-                  <Link to="/" onClick={this.logout} className="navbar-item">
-                    Logout
-                  </Link>
-                )}<br/>
+            <div className="navbar-header is-right">
                 <div>
                   <img
                     width="95"
@@ -44,10 +34,22 @@ function Header(props) {
                     alt="Nike logo"
                   />
                 </div>
-          
             </div>
-            <div className="header-right">
-              <Link to="/">
+            <div className="is-right">
+            <div class='rows'>
+      <div class='row is-full'>
+      {!props.state.user ? (
+                  <Link to="/login" className="navbar-item">
+                    Login
+                  </Link>  
+                ) : (
+                  <Link to="/" onClick={this.logout} className="navbar-item">
+                    Logout
+                  </Link>
+                )}
+      </div>
+      <div class='row is-full'>
+      <Link to="/">
                 <p id="navText">Home</p>
               </Link>
               <Link to="/">
@@ -83,6 +85,8 @@ function Header(props) {
                   <Cart />
                 </div>
               </div>
+      </div>
+    </div>
             </div>
           </div>
         </nav>

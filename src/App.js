@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,24 +8,23 @@ import Footer from "./component/Footer";
 import Header from "../src/component/Header";
 import Context from "./context/Context";
 import Login from "./component/Login";
-import Cart from './component/Cart';
+import Cart from "./component/Cart";
 import ProductDetails from "./pages/productDetails";
 import ScrollToTop from "./utilies/ScrollToTop";
 import ProductDetailCard from "../src/component/product_detail";
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       user: null,
       cart: {},
-      products: []
+      products: [],
     };
     this.routerRef = React.createRef();
   }
-  
-  addToCart = cartItem => {
+
+  addToCart = (cartItem) => {
     let cart = this.state.cart;
     if (cart[cartItem.id]) {
       cart[cartItem.id].amount += cartItem.amount;
@@ -39,13 +38,13 @@ class App extends Component {
     this.setState({ cart });
   };
 
-  removeFromCart = cartItemId => {
+  removeFromCart = (cartItemId) => {
     let cart = this.state.cart;
     delete cart[cartItemId];
     localStorage.setItem("cart", JSON.stringify(cart));
     this.setState({ cart });
   };
-  
+
   clearCart = () => {
     let cart = {};
     localStorage.removeItem("cart");
@@ -57,13 +56,13 @@ class App extends Component {
       this.routerRef.current.history.push("/login");
       return;
     }
-  
+
     const cart = this.state.cart;
-  
-    const products = this.state.products.map(p => {
+
+    const products = this.state.products.map((p) => {
       if (cart[p.name]) {
         p.stock = p.stock - cart[p.name].amount;
-  
+
         // axios.put(
         //   `http://localhost:3001/products/${p.id}`,
         //   { ...p },
@@ -71,7 +70,7 @@ class App extends Component {
       }
       return p;
     });
-  
+
     this.setState({ products });
     this.clearCart();
   };
@@ -82,6 +81,7 @@ class App extends Component {
       this.setState({ products: res.data });
     });
   }
+  
   render() {
     return (
       <Context.Provider
@@ -92,51 +92,44 @@ class App extends Component {
           login: this.login,
           addProduct: this.addProduct,
           clearCart: this.clearCart,
-          checkout: this.checkout
+          checkout: this.checkout,
         }}
       >
-        
         <Router>
-        <ScrollToTop>
-          <div className="App">
-            <Header state={this.state}/>
-            <div className="container-fluid p-0">
-            <nav
-            className="navbar container"
-            role="navigation"
-            aria-label="main navigation"
-          >
-              <Switch>
-                <Route exact path="/"
-                  render={props => (
-                    <Home products={this.state.products} />
-                  )}>
-                </Route>
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/cart" component={Cart} />
-                <Route exact path="/crud">
-                  <h2>Hello there</h2>
-                </Route>
-                <Route exact path="/detail" component={ProductDetails} />
-                {this.state.products.map((product, i) => (
-                  <Route
-                    exact
-                    key={`route${i}`}
-                    path={`/detail/${product.id}`}
-                    render={props => (
-                      <ProductDetailCard
-                        product={product}
+          <ScrollToTop>
+            <div className="App">
+              <div className="container-fluid p-0">
+                <nav
+                  role="navigation"
+                  aria-label="main navigation"
+                >
+                  <Header state={this.state} />
+                  <Switch>
+                    <Route
+                      exact
+                      path="/"
+                      render={(props) => (
+                        <Home products={this.state.products} />
+                      )}
+                    ></Route>
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/cart" component={Cart} />
+                    <Route exact path="/detail" component={ProductDetails} />
+                    {this.state.products.map((product, i) => (
+                      <Route
+                        exact
+                        key={`route${i}`}
+                        path={`/detail/${product.id}`}
+                        render={(props) => (
+                          <ProductDetailCard product={product} />
+                        )}
                       />
-                    )}
-                  />
-                ))}
-              </Switch>
-            </nav>
-              
-              <Footer />
+                    ))}
+                  </Switch>
+                </nav>
+                <Footer />
+              </div>
             </div>
-            
-          </div>
           </ScrollToTop>
         </Router>
       </Context.Provider>
