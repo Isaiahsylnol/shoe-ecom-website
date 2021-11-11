@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Footer from "./component/Footer";
 import Header from "../src/component/Header";
-import Context from "./context/Context";
 import Login from "./component/Login";
 import Cart from "./component/Cart";
 import ProductDetails from "./pages/productDetails";
 import ScrollToTop from "./utilies/ScrollToTop";
 import ProductDetailCard from "../src/component/product_detail";
-
+import Context from "./context/Context";
+import about from "./pages/about";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -76,9 +76,10 @@ class App extends Component {
   };
 
   async componentDidMount() {
+    let user = localStorage.getItem("user");
     axios.get("http://localhost:3000/crud").then((res) => {
-      console.log(res);
-      this.setState({ products: res.data });
+      user = user ? JSON.parse(user) : null;
+      this.setState({ user, products: res.data });
     });
   }
   
@@ -95,7 +96,7 @@ class App extends Component {
           checkout: this.checkout,
         }}
       >
-        <Router>
+        
           <ScrollToTop>
             <div className="App">
               <div className="container-fluid p-0">
@@ -103,7 +104,7 @@ class App extends Component {
                   role="navigation"
                   aria-label="main navigation"
                 >
-                  <Header state={this.state} />
+                  <Header state={this.state}  />
                   <Switch>
                     <Route
                       exact
@@ -114,6 +115,7 @@ class App extends Component {
                     ></Route>
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/cart" component={Cart} />
+                    <Route exact path="/about" component={about} />
                     <Route exact path="/detail" component={ProductDetails} />
                     {this.state.products.map((product, i) => (
                       <Route
@@ -131,7 +133,7 @@ class App extends Component {
               </div>
             </div>
           </ScrollToTop>
-        </Router>
+   
       </Context.Provider>
     );
   }

@@ -1,6 +1,10 @@
 import React from "react";
 import Cart from "./Cart";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import ProtectedRoute from "../auth/ProtectedRoute";
+import about from "../pages/about";
+import AuthNav from './auth-nav';
 
 function Header(props) {
   function myFunction() {
@@ -36,31 +40,27 @@ function Header(props) {
                 </div>
             </div>
             <div className="is-right">
-            <div class='rows'>
-      <div class='row is-full'>
-      {!props.state.user ? (
-                  <Link to="/login" className="navbar-item">
-                    Login
-                  </Link>  
-                ) : (
-                  <Link to="/" onClick={this.logout} className="navbar-item">
-                    Logout
-                  </Link>
-                )}
+            <div className='rows'>
+      <div className='row is-full'>
+    {/* Place login component here */}
+    <AuthNav />
       </div>
-      <div class='row is-full'>
-      <Link to="/">
-                <p id="navText">Home</p>
-              </Link>
+      <div className='row is-full'>
+      <NavLink
+      to="/"
+      exact
+      className="nav-link"
+      activeClassName="router-link-exact-active"
+    >
+      Home
+    </NavLink>
               <Link to="/">
                 <p id="navText">Gallery</p>
               </Link>
               <Link to="/">
                 <p id="navText">Shop</p>
               </Link>
-              <Link to="/">
-                <p id="navText">Contact</p>
-              </Link>
+              <ProtectedRoute path="/about" component={about} />
               {/* Dropdown cart menu */}
               <div className="dropdown">
                 <button onClick={myFunction}>

@@ -1,10 +1,12 @@
 import { Carousel } from "react-bootstrap";
 import ProductCard2 from "./component/product_card2.js";
 import { Link } from "react-router-dom";
+import { withAuth0 } from '@auth0/auth0-react';
 import React from "react";
  
 const Home = props => {
   const { products } = props;
+
     return (
       <div>
       <section className="section">
@@ -172,4 +174,4 @@ const Home = props => {
   }
  
 
-export default Home;
+export default withAuth0(Home);
