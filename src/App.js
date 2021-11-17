@@ -9,10 +9,13 @@ import Header from "../src/component/Header";
 import Login from "./component/Login";
 import Cart from "./component/Cart";
 import ProductDetails from "./pages/productDetails";
+import Media from "./pages/media";
 import ScrollToTop from "./utilies/ScrollToTop";
 import ProductDetailCard from "../src/component/product_detail";
+import ProtectedRoute from "./auth/ProtectedRoute";
 import Context from "./context/Context";
 import about from "./pages/about";
+import Shop from "./pages/shop";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -95,15 +98,11 @@ class App extends Component {
           clearCart: this.clearCart,
           checkout: this.checkout,
         }}
-      >
-        
+      >    
           <ScrollToTop>
             <div className="App">
               <div className="container-fluid p-0">
-                <nav
-                  role="navigation"
-                  aria-label="main navigation"
-                >
+               
                   <Header state={this.state}  />
                   <Switch>
                     <Route
@@ -114,8 +113,10 @@ class App extends Component {
                       )}
                     ></Route>
                     <Route exact path="/login" component={Login} />
+                    <Route exact path="/media" component={Media} />
                     <Route exact path="/cart" component={Cart} />
-                    <Route exact path="/about" component={about} />
+                    <Route exact path="/shop" component={Shop} />
+                    <ProtectedRoute exact path="/about" component={about} />
                     <Route exact path="/detail" component={ProductDetails} />
                     {this.state.products.map((product, i) => (
                       <Route
@@ -128,12 +129,10 @@ class App extends Component {
                       />
                     ))}
                   </Switch>
-                </nav>
                 <Footer />
               </div>
             </div>
           </ScrollToTop>
-   
       </Context.Provider>
     );
   }

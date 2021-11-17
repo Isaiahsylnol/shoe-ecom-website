@@ -141,70 +141,7 @@ code {
 /**********************************
 NAVIGATION
 ***********************************/
-
-.dropdown {
-  margin-top: -18px;
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  float: left;
-  margin-left: -14em;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
-} 
-
-.brand-title {
-  color: white;
-  font-family: 'lato';
-  text-align: left;
-  margin: 7% auto;
-  font-size: 1em;
-  font-weight: 800;
-  letter-spacing: 1;
-  text-transform: uppercase;
-}
-
-#navText{
-  font-weight: 150;
-  font-size: 24px;
-  color: black;
-  padding: 10px 30px 10px 0px;
-}
-
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px; 
-  line-height: 25px;
-  border-radius: 4px;
-}
-
+ 
 .rows{
   display: flex;
   flex-direction: column;
@@ -248,14 +185,7 @@ Product details component
 
 .inactive {
   background-color: rgb(255, 255, 255);
-}
-
-.active {
-  background-color: #363636;
-  border: 3px solid;
-  border-color: black;
-  color: rgb(255, 255, 255); 
-}
+} 
 
 .color-select{
   padding: 12px;
