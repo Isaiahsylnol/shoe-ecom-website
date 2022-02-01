@@ -115,7 +115,13 @@ class App extends Component {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/media" component={Media} />
                     <Route exact path="/cart" component={Cart} />
-                    <Route exact path="/shop" component={Shop} />
+                    <Route
+                      exact
+                      path="/shop"
+                      render={(props) => (
+                        <Shop products={this.state.products} />
+                      )}
+                    /> 
                     <ProtectedRoute exact path="/about" component={about} />
                     <Route exact path="/detail" component={ProductDetails} />
                     {this.state.products.map((product, i) => (

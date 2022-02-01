@@ -125,12 +125,11 @@ code {
 
 .prodCard {
   margin: 1em;
+}
  
-  }
- 
-  .cart {
-    height: 355px;
-  }
+.cart {
+  height: 355px;
+}
 
 .wrapper {
     box-sizing: border-box;
@@ -206,4 +205,18 @@ Product details component
 
 .active-color{
    background-color: red;
+}
+
+/**********************************
+Product card component 
+***********************************/
+
+.prod-card-content {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+}
+
+.prod_links {
+  text-decoration: none;
+  background-color: aquamarine;
 }

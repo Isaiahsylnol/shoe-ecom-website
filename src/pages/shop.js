@@ -1,41 +1,54 @@
 import React from "react";
-import ListGroup from 'react-bootstrap/ListGroup';
+import { useState } from 'react';
+import ListGroup from "react-bootstrap/ListGroup";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import StoreContent from "../component/storeContent";
 
 function Shop(props) {
+  const [item, setItem] = useState(props.products);
 
-    function alertClicked() {
-        alert('You clicked the third ListGroupItem');
+    //Filter Function
+  const filter = (model) => {
+      if (model === "All") {
+        setItem([]);
+        return;
       }
-
-  return (
-    <div class="container">
-      <div class="row">
-        <div class="col-">
-        <ListGroup defaultActiveKey="#link1">
-    <ListGroup.Item action href="#link1">
-      Lifestyle
-    </ListGroup.Item>
-    <ListGroup.Item action href="#link2">
-      Basketball
-    </ListGroup.Item>
-    <ListGroup.Item action href="#link3">
-      Running
-    </ListGroup.Item>
-    <ListGroup.Item action href="#link4">
-      Indoor
-    </ListGroup.Item>
-    <ListGroup.Item action href="#link5">
-      Soccer
-    </ListGroup.Item>
-    <ListGroup.Item action href="#link6" onClick={alertClicked}>
-      Golf
-    </ListGroup.Item>
-  </ListGroup>
-        </div>
-        <div class="col-sm">One of two columns</div>
-      </div>
-    </div>
-  );
+  
+  const filteredData = props.products.filter((product) => product.model === model);
+      setItem(filteredData);
+    };
+ 
+    return(
+      <Container>
+    <Row>
+      {/* Sidebar for product categories */}
+      <Col xs={12} md={2} sm={12}>
+        <ListGroup defaultActiveKey="/">
+          <ListGroup.Item action variant="light" onClick={() => filter("All")}>
+            NONE
+          </ListGroup.Item>
+          <ListGroup.Item action variant="light" onClick={() => filter("JP-1200")}>
+            Running
+          </ListGroup.Item>
+          <ListGroup.Item action variant="light" onClick={() => filter("JP-1110")}>
+            Indoor
+          </ListGroup.Item>
+          <ListGroup.Item action variant="light" onClick={() => filter("JP-1000")}>
+            Soccer
+          </ListGroup.Item>
+          <ListGroup.Item action variant="light" onClick={() => filter("JP-1300")} >
+          Basketball
+          </ListGroup.Item>
+        </ListGroup>
+      </Col>
+      <Col>
+      <StoreContent products={props.products} filter={item}/>
+      </Col>
+    </Row>
+  </Container>
+    )
 }
 
 export default Shop;

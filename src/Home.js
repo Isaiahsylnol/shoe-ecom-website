@@ -6,7 +6,6 @@ import React from "react";
  
 const Home = props => {
   const { products } = props;
-
     return (
       <div>
       <section className="section">
@@ -68,9 +67,7 @@ const Home = props => {
                 </Carousel.Item>
               </Carousel>
                 </div>
-    
         </section>
-     
             <div className="columns features"> 
                 <div className="column is-6">
                     <div className="card is-shady">
@@ -173,5 +170,4 @@ const Home = props => {
     );
   }
  
-
 export default withAuth0(Home);
