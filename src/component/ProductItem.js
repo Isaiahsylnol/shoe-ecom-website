@@ -10,10 +10,6 @@ const ProductItem = props => {
       colors: props.product.color
     });
 
-    useEffect(() => {
-       console.log(props); 
-    });
-
       function toggleActive(obj) {
         if(obj){
           //console.log(obj);
@@ -21,12 +17,17 @@ const ProductItem = props => {
         }
       }
       
-      function toggleStyle(index) {
-        if(index === appState.activeSize){
-          console.log(index);
-          return "button1 active";
-        } else {
-          return " button1 inactive";
+      function toggleStyle(style, index) {
+        if(style == appState.activeSize){
+         console.log(typeof(style));
+          return "button1 active-sel";
+        } 
+        if(style == appState.activeColor){
+          console.log(typeof(style));
+          return "button1 active-sel";
+        } 
+         else {
+          return "button1 inactive";
         }
       }
 
@@ -63,12 +64,11 @@ const ProductItem = props => {
                   marginTop: "2em",
                   maxWidth: "30px",
                   maxHeight: "30px",
-                 
                 }}
                 key={color}
-                className={toggleStyle(appState.colors[index])}
+                className={toggleStyle(color, index)}
                 onClick={() => {
-                  toggleActive(appState.colors[index]);
+                  toggleActive(color);
                 }}
               ></button>
             ))}
@@ -77,9 +77,9 @@ const ProductItem = props => {
             {props.product.size.map((size, index) => (
               <button
               key={size}
-                className={toggleStyle(appState.prodSizes[index])}
+                className={toggleStyle(size, index)}
                 onClick={() => {
-                  toggleActive(appState.prodSizes[index]);
+                  toggleActive(size);
                 }}
               >
                 {size}

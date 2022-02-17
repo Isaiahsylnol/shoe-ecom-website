@@ -1,7 +1,7 @@
 import React from 'react'; 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function StoreItems(props) {
     return (
@@ -9,7 +9,7 @@ function StoreItems(props) {
       <Row>
         {props.products.map((product) => (
           <Col key={product.id} id={product.id} xs={12} sm={12} md={4} lg={3}>
-            <Button onClick={() => this.handleClick(product.model)} variant="white" className="prod_links"  >
+            <Link to={`/detail/${product.id}`} variant="white" className="prod_links"  >
             <div>
               <div className="prod-card-content">
                 <div className="title">
@@ -22,14 +22,14 @@ function StoreItems(props) {
                   </div>
                   <h5>{product.name}</h5>
                   <h6>Men's Shoe</h6>
-                  <div className="">
+                  <div>
                     <h6>{product.price}</h6>
-                    {/* <a href="#" class="btn btn-dark px-5 py-2 mb-5">Purchase</a> */}
+                  <a href="#" class="btn btn-dark">Purchase</a> 
                   </div>
                 </div>
               </div>
             </div>
-          </Button>
+          </Link>
           </Col>
         ))}
       </Row>

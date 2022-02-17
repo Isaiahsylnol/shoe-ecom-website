@@ -186,6 +186,10 @@ Product details component
   background-color: rgb(255, 255, 255);
 } 
 
+.active-sel {
+  border: solid 3px black;
+} 
+
 .color-select{
   padding: 12px;
   margin-top: 2em;
