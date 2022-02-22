@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const ProductItem = props => {
  
@@ -94,8 +94,7 @@ const ProductItem = props => {
                     product,
                     amount: 1
                   })
-                }
-              >
+                }>
                 Add to Cart
               </button>
             </div>
