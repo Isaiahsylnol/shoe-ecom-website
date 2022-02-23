@@ -1,3 +1,5 @@
+// information concerning the product displayed at the product detail route
+
 import React, { useState } from 'react';
 
 const ProductItem = props => {

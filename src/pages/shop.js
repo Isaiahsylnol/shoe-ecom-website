@@ -4,7 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import StoreContent from "../component/storeContent";
+import StoreContent from "../component/StoreContent";
 
 function Shop(props) {
   const [item, setItem] = useState(props.products);

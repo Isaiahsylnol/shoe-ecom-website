@@ -224,3 +224,7 @@ Product card component
   text-decoration: none;
   background-color: aquamarine;
 }
+
+.btn-actions {
+  border-radius: 50%;
+}

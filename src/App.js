@@ -11,11 +11,12 @@ import Cart from "./component/Cart";
 import ProductDetails from "./pages/productDetails";
 import Media from "./pages/media";
 import ScrollToTop from "./utilies/ScrollToTop";
-import ProductDetailCard from "../src/component/product_detail";
+import ProductDetailCard from "../src/component/Product_Detail";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Context from "./context/Context";
 import about from "./pages/about";
 import Shop from "./pages/shop";
+
 class App extends Component {
   constructor(props) {
     super(props);

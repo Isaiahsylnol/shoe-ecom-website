@@ -1,5 +1,5 @@
 import { Carousel } from "react-bootstrap";
-import ProductCard2 from "./component/product_card2.js";
+import ProductCard2 from "./component/Product_Card2.js";
 import { Link } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
 import React from "react";
